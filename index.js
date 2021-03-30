@@ -39,7 +39,8 @@ try {
     console.log('set output global "match":', matchStr);
     core.setOutput('match', matchStr);
   } else {
-    console.log('set output first "match":', matches);
+    console.log('ALL "match":', matches);
+    console.log('FIRST "match":', matches[0]);
     core.setOutput('match', matches[0]);
   }
 } catch (error) {
