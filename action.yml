@@ -10,9 +10,9 @@ inputs:
   search_string:
     description: "search string"
     required: true
-  return_global_or_first_match:
-    description: "return global or first match"
-    required: true
+  # return_global_or_first_match:
+  #   description: "return global or first match"
+  #   required: true
 outputs:
   match:
     description: "regex match"
