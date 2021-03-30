@@ -4,7 +4,7 @@ try {
   const regexPattern = core.getInput('regex_pattern');
   const regexFlags = core.getInput('regex_flags');
   const searchString = core.getInput('search_string');
-  const returnGlobalOrFirst = core.getInput('return_global_or_first_match') || true;
+  const returnGlobalOrFirst = core.getInput('return_global_or_first_match');
   if (!regexPattern) {
     core.setFailed('regex_pattern input is required');
     return;
@@ -34,7 +34,7 @@ try {
   console.log('Found:', matches);
   if(returnGlobalOrFirst === 'global') {
     console.log('set output global "match":', matches);
-    core.setOutput('match', matches[0]);
+    core.setOutput('match', matches);
   } else {
     console.log('set output first "match":', matches);
     core.setOutput('match', matches[0]);
