@@ -35,7 +35,7 @@ try {
   console.log('Found:', matches);
   console.log('First match:', matches[0]);
   if(returnGlobalOrFirst === 'global') {
-    const matchStr = `"${matches.join(', ')}"`;
+    const matchStr = matches.join(', ');
     console.log('set output global "match":', matchStr);
     core.setOutput('match', matchStr);
   } else {
