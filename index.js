@@ -22,6 +22,7 @@ try {
     return;
   }
   if (returnGlobalOrFirst !== 'global' || returnGlobalOrFirst !== 'first') {
+    console.log(`return_global_or_first_match: ${return_global_or_first_match}`);
     core.setFailed('return_global_or_first_match param should be "global" or "first"');
     return;
   }
