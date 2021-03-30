@@ -8,16 +8,16 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/AsasInnab/regex-action.git"
+    "url": "git+https://github.com/olexandr13/regex-action.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/AsasInnab/regex-action/issues"
+    "url": "https://github.com/olexandr13/regex-action/issues"
   },
-  "homepage": "https://github.com/AsasInnab/regex-action#readme",
+  "homepage": "https://github.com/olexandr13/regex-action#readme",
   "dependencies": {
-    "@actions/core": "^1.2.3"
+    "@actions/core": "^1.0.0"
   }
 }

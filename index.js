@@ -4,6 +4,7 @@ try {
   const regexPattern = core.getInput('regex_pattern');
   const regexFlags = core.getInput('regex_flags');
   const searchString = core.getInput('search_string');
+  const returnGlobalOrFirst = core.getInput('return_global_or_first_match') || true;
   if (!regexPattern) {
     core.setFailed('regex_pattern input is required');
     return;
@@ -16,6 +17,14 @@ try {
     core.setFailed('search_string input is required');
     return;
   }
+  if (!returnGlobalOrFirst) {
+    core.setFailed('return_global_or_first_match input is required');
+    return;
+  }
+  if (returnGlobalOrFirst !== 'global' || returnGlobalOrFirst !== 'first') {
+    core.setFailed('return_global_or_first_match param should be "global" or "first"');
+    return;
+  }
   const regex = new RegExp(regexPattern, regexFlags);
   const matches = searchString.match(regex);
   if (!matches) {
@@ -23,8 +32,13 @@ try {
     return;
   }
   console.log('Found:', matches);
-  console.log('set output "first_match":', matches[0]);
-  core.setOutput('first_match', matches[0]);
+  if(returnGlobalOrFirst === 'global') {
+    console.log('set output global "match":', matches);
+    core.setOutput('match', matches[0]);
+  } else {
+    console.log('set output first "match":', matches);
+    core.setOutput('match', matches[0]);
+  }
 } catch (error) {
   core.setFailed(error.message);
 }

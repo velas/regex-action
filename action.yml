@@ -1,5 +1,5 @@
 name: "Match a string against a regex pattern"
-description: "Match a string against a regex pattern and output first match"
+description: "Match a string against a regex pattern and output match"
 inputs:
   regex_pattern:
     description: "regex pattern"
@@ -10,8 +10,11 @@ inputs:
   search_string:
     description: "search string"
     required: true
+  return_global_or_first_match:
+    description: "return global or first match"
+    required: true
 outputs:
-  first_match:
+  match:
     description: "first regex match"
 
 runs:
