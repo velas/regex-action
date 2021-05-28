@@ -22,25 +22,25 @@ try {
     return;
   }
   if (returnGlobalOrFirst !== 'global' && returnGlobalOrFirst !== 'first') {
-    console.log(`return_global_or_first_match: ${return_global_or_first_match}`);
+    core.info(`return_global_or_first_match: ${return_global_or_first_match}`);
     core.setFailed('return_global_or_first_match param should be "global" or "first"');
     return;
   }
   const regex = new RegExp(regexPattern, regexFlags);
   const matches = searchString.match(regex);
   if (!matches) {
-    console.log('Could not find any matches');
+    core.info(`Could not find any matches`);
     return;
   }
-  console.log('Found:', matches);
-  console.log('First match:', matches[0]);
+  core.info(`Found: ${matches}`);
+  core.info(`First match: ${matches[0]}`);
   if(returnGlobalOrFirst === 'global') {
     const matchStr = matches.join(', ');
-    console.log('set output global "match":', matchStr);
+    core.info(`set output global match: ${matchStr}`);
     core.setOutput('match', matchStr);
   } else {
-    console.log('ALL "match":', matches);
-    console.log('FIRST "match":', matches[0]);
+    core.info(`ALL "match": ${matches}`);
+    core.info(`FIRST "match": ${matches[0]}`);
     core.setOutput('match', matches[0]);
   }
 } catch (error) {
