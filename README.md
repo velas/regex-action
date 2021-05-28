@@ -16,6 +16,10 @@ This action matches a string against a regex pattern and outputs the first match
 
 **Required** The string to test against (e.g. "**My jira ticket number is JIR-12345**")
 
+### `return_global_or_first_match`
+
+**Required** Available values are "global" or "first". If "first" – first match is returned, if "global" all matches returned separated by ", " (e.g. "VTX-1, VTX-2")
+
 ## Outputs
 
 ### `first_match`
